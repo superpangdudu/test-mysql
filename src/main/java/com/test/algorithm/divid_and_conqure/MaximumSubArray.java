@@ -1,7 +1,7 @@
 package com.test.algorithm.divid_and_conqure;
 
 /**
- * Created by Administrator on 2020/8/26.
+ * MaximumSubArray
  */
 public class MaximumSubArray {
 
