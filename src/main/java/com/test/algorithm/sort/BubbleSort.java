@@ -1,7 +1,7 @@
 package com.test.algorithm.sort;
 
 /**
- * Created by Administrator on 2020/8/27.
+ * BubbleSort
  */
 public class BubbleSort {
     public void sort(int[] A) {
