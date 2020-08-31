@@ -2,6 +2,7 @@ package com.test.algorithm.divid_and_conqure;
 
 /**
  * MaximumSubArray
+ *
  */
 public class MaximumSubArray {
 
