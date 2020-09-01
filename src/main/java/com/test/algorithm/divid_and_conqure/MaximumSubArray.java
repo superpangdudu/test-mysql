@@ -48,6 +48,14 @@ public class MaximumSubArray {
         return crossingMaximum;
     }
 
+    /**
+     *
+     * @param A
+     * @param low
+     * @param mid
+     * @param high
+     * @return
+     */
     private Maximum findMaxCrossingSubArray(int[] A, int low, int mid, int high) {
         int leftSum = Integer.MIN_VALUE;
         int rightSum = Integer.MIN_VALUE;
