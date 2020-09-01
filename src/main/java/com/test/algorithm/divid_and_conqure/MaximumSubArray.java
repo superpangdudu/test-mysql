@@ -6,6 +6,9 @@ package com.test.algorithm.divid_and_conqure;
  */
 public class MaximumSubArray {
 
+    /**
+     *
+     */
     private static class Maximum {
         Maximum(int low, int high, int sum) {
             this.low = low;
@@ -18,6 +21,13 @@ public class MaximumSubArray {
         int sum;
     }
 
+    /**
+     *
+     * @param A
+     * @param low
+     * @param high
+     * @return
+     */
     public Maximum findMaximumSubArray(int[] A, int low, int high) {
         if (low == high - 1)
             return new Maximum(low, high, A[low]);
