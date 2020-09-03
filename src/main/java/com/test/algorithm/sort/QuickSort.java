@@ -4,16 +4,16 @@ package com.test.algorithm.sort;
  * QuickSort
  *
  * Partition:
- *  a) i pj                          r
- *       2   8   7   1   3   5   6   4
- *
- *  b) p,i j                       r
+ *  a) pij                         r
  *     2   8   7   1   3   5   6   4
  *
- *  c) p,i     j                   r
+ *  b) pi  j                       r
  *     2   8   7   1   3   5   6   4
  *
- *  d) p,i         j               r
+ *  c) pi      j                   r
+ *     2   8   7   1   3   5   6   4
+ *
+ *  d) pi          j               r
  *     2   8   7   1   3   5   6   4
  *
  * e)  p   i           j           r
@@ -43,25 +43,26 @@ public class QuickSort {
      */
     private int partition(int[] A, int p, int r) {
         int x = A[r];
-        int i = p - 1;
+        int i = p;
 
         for (int j = p; j < r; j++) {
             if (A[j] <= x) {
-                i = i + 1;
 
                 if (i != j) {
                     int tmp = A[j];
                     A[j] = A[i];
                     A[i] = tmp;
                 }
+
+                i = i + 1;
             }
         }
 
-        int tmp = A[i + 1];
-        A[i + 1] = A[r];
+        int tmp = A[i];
+        A[i] = A[r];
         A[r] = tmp;
 
-        return i + 1;
+        return i;
     }
 
     /**
