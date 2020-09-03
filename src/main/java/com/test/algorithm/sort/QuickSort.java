@@ -1,5 +1,7 @@
 package com.test.algorithm.sort;
 
+import java.util.Random;
+
 /**
  * QuickSort
  *
@@ -63,6 +65,26 @@ public class QuickSort {
         A[r] = tmp;
 
         return i;
+    }
+
+    /**
+     *
+     * @param A
+     * @param p
+     * @param r
+     * @return
+     */
+    private int randomizedPartition(int A[], int p, int r) {
+        // exchange the last one and a random position value
+        Random random = new Random();
+        int randomInt = random.nextInt(r);
+
+        int tmp = A[r];
+        A[r] = A[randomInt];
+        A[randomInt] = tmp;
+
+        //
+        return partition(A, p, r);
     }
 
     /**
