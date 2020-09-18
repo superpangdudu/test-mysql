@@ -72,6 +72,26 @@ public class Calculator {
 
     //===============================================================
 
+    private String fixNegativeStatement(String statement) {
+        StringBuilder sb = new StringBuilder(statement.length());
+
+        // starts with a negative value
+        if (statement.charAt(0) == '-')
+            sb.append('0');
+
+        for (int i = 0; i < statement.length(); i++) {
+            char c = statement.charAt(i);
+
+            sb.append(c);
+            if (c == '(') {
+                if (statement.charAt(i + 1) == '-')
+                    sb.append('0');
+            }
+        }
+
+        return sb.toString();
+    }
+
     /**
      *
      * @param statement
@@ -79,6 +99,8 @@ public class Calculator {
      */
     private List<String> parseStatement(String statement) {
         statement = statement.replace(" ", "");
+        statement = fixNegativeStatement(statement);
+
         char[] chars = statement.toCharArray();
         int pos = 0;
 
@@ -217,7 +239,8 @@ public class Calculator {
     //===============================================================
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        int value = calculator.calculate("1 + 2 * 4 +(3-2*5)");
+        //int value = calculator.calculate("1 + 2 * 4 +(3-2*5)");
+        int value = calculator.calculate("-7 + 1");
         int n = 0;
     }
 }
